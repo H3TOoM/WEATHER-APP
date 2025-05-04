@@ -52,14 +52,14 @@ const App = () => {
 
   return (
     <div className="weather-container m-auto mt-10 rounded-lg shadow-lg max-w-[95%] sm:max-w-[600px]">
-      <h1 className="logo mt-2 text-center text-xl sm:text-2xl font-bold">
+      <h1 className="logo mt-5 text-center text-xl sm:text-2xl font-bold">
         <span>WEATHER</span> APP
       </h1>
 
       {loading ? (
         <HashLoader color="rgba(246,244,235, 1)" size={30} className="m-auto my-10"/>
       ) : (
-        <div className="weather-details flex flex-col justify-center items-center capitalize p-4">
+        <div className="weather-details flex flex-col justify-center items-center capitalize p-2">
           <img
             src={getWeatherImage(weather.weather?.[0]?.main)}
             className="w-32 h-32 sm:w-40 sm:h-40"
@@ -79,7 +79,7 @@ const App = () => {
             <div className="flex gap-3 items-center">
               <img src={assets.wind} className="w-10" />
               <p className="text-lg sm:text-xl">
-                <span>{weather.wind?.speed} km/h</span> <br />
+                <span>{weather.wind?.speed} kM/h</span> <br />
                 wind speed
               </p>
             </div>
