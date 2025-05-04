@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { assets } from "./assets/assets";
+import { HashLoader } from "react-spinners";
 
 const App = () => {
   const [location, setLocation] = useState({});
@@ -56,7 +57,7 @@ const App = () => {
       </h1>
 
       {loading ? (
-        <p className="text-center text-xl p-10 text-[#F6F4EB]">Loading...</p>
+        <HashLoader color="rgba(246,244,235, 1)" size={30} className="m-auto my-10"/>
       ) : (
         <div className="weather-details flex flex-col justify-center items-center capitalize p-4">
           <img
