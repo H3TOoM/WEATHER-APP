@@ -7,7 +7,7 @@ const App = () => {
   const [location, setLocation] = useState({});
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(true);
-
+  const apiKey = "17b1a6efeae3fa20a41b81c4a5ef12e4";
   // Get country and city
   useEffect(() => {
     axios
@@ -21,7 +21,7 @@ const App = () => {
     if (!location.city) return;
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location.city}&appid=17b1a6efeae3fa20a41b81c4a5ef12e4&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location.city}&appid=${apiKey}&units=metric`
       )
       .then((response) => {
         setWeather(response.data);
