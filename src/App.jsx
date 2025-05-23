@@ -7,11 +7,12 @@ const App = () => {
   const [location, setLocation] = useState({});
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(true);
-  const apiKey = "17b1a6efeae3fa20a41b81c4a5ef12e4";
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  
   // Get country and city
   useEffect(() => {
     axios
-      .get("https://ipwho.is/")
+      .get("https://ipapi.co/json/")
       .then((response) => setLocation(response.data))
       .catch((error) => console.log(error));
   }, []);
@@ -57,7 +58,7 @@ const App = () => {
       </h1>
 
       {loading ? (
-        <HashLoader color="rgba(246,244,235, 1)" size={30} className="m-auto my-10"/>
+        <HashLoader color="rgba(246,244,235, 1)" size={30} className="m-auto my-10" />
       ) : (
         <div className="weather-details flex flex-col justify-center items-center capitalize p-2">
           <img
